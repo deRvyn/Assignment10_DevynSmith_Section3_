@@ -9,6 +9,8 @@
        @(x.TeamName == ViewBag.SelectedCategory ? "btn-primary" : "brn-outline-secondary")"
        asp-action="Index" asp-controller="Home"
        asp-route-team="@x.TeamId"
-       asp-route-teamname="@x.TeamName">@x.TeamName</a>
+       asp-route-teamname="@x.TeamName"
+       asp-route-pagenum="1">@x.TeamName</a>
+       
     <br />
 }
