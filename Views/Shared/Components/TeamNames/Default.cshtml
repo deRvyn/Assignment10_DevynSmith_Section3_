@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Teams>
+
+<!--Added the navigation view to select different teams-->
+<a asp-action="Index" asp-controller="Home" asp-route-team="" class="btn btn-block text-white btn-outline-primary">Home</a>
+<br />
+@foreach (var x in Model)
+{
+    <a class="btn btn-block text-white btn-outline-secondary
+       @(x.TeamName == ViewBag.SelectedCategory ? "btn-primary" : "brn-outline-secondary")"
+       asp-action="Index" asp-controller="Home"
+       asp-route-team="@x.TeamId"
+       asp-route-teamname="@x.TeamName">@x.TeamName</a>
+    <br />
+}

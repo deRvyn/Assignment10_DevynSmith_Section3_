@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Contact Page";
+}
+
+@model IndexViewModel
+
+<h1>@Model.TeamName</h1>
+
+@*sets up the table and headings*@
+<table class="text-left table table-striped table-dark table-hover col-10">
+    <tr class="text-left text-light">
+        <th>First Name</th>
+        <th>Middle Initial</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        <th>Phone</th>
+    </tr>
+
+    @* adds each bowler *@
+    @foreach (var x in Model.Bowlers)
+    {
+        <tr class="text-left text-light">
+            <td>@x.BowlerFirstName</td>
+            <td>@x.BowlerMiddleInit</td>
+            <td>@x.BowlerLastName</td>
+            <td>@x.BowlerAddress</td>
+            <td>@x.BowlerCity</td>
+            <td>@x.BowlerState</td>
+            <td>@x.BowlerZip</td>
+            <td>@x.BowlerPhoneNumber</td>
+        </tr>
+    }
+
+</table>
+
+@*adds the pagination buttons*@
+
+    <div page-info="@Model.PageNumberingInfo" page-url-teamname="@Model.TeamName"
+         page-classes-enabled="true" page-class="btn"
+         page-class-normal="btn-outline-dark bg-light"
+         page-class-selected="btn-primary"
+         class="btn-group pull-right m-1 align-self-end">
+    </div>
